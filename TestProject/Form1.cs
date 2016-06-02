@@ -15,6 +15,8 @@ namespace TestProject
 		public Form1()
 		{
 			InitializeComponent();
+
+			string test = "this is a test";
 		}
 	}
 }
