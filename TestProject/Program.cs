@@ -1,22 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace TestProject
 {
-	static class Program
+	class Program
 	{
-		/// <summary>
-		/// The main entry point for the application.
-		/// </summary>
-		[STAThread]
-		static void Main()
+		static void Main(string[] args)
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+			TestBroker broker = new TestBroker();
+			Stock s = new Stock(broker);
+			s.Symbol = "AAPL";
+			s.Price = 100.00m;
+			s.Order();
+
+			Console.ReadLine();
 		}
 	}
 }
